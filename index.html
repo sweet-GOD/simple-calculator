@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wholeDiv">
+      <div class="topDiv">
+        <p id="p1"></p>
+        <p id="result" class="shadow-sm"></p>
+      </div>
+
+      <div>
+        <button onclick="operators('%')">%</button>
+        <button onclick="displayResult.innerHTML = ''; p1.innerHTML = '';"
+          >CE</button
+        >
+        <button onclick="p1.innerHTML = '';">C</button>
+        <button onclick="p1.innerHTML = p1.innerHTML.slice(0, -1);">Del</button>
+        <button onclick="operators('÷')">÷</button>
+      </div>
+      <div>
+        <button
+          onclick="displayResult.innerHTML = Math.sqrt(Number(p1.innerHTML));"
+          >√</button
+        >
+        <button class="number" onclick="display(7)">7</button>
+        <button class="number" onclick="display(8)">8</button>
+        <button class="number" style="background: purple;" onclick="display(9)">9</button>
+        <button onclick="operators('*')">*</button>
+      </div>
+      <div>
+        <button onclick="operators('^2')">^2</button>
+        <button class="number" onclick="display(4)">4</button>
+        <button class="number" onclick="display(5)">5</button>
+        <button class="number" onclick="display(6)">6</button>
+        <button onclick="operators('-')">-</button>
+      </div>
+      <div>
+        <button onclick="operators('^3')">^3</button>
+        <button class="number" onclick="display(2)">2</button>
+        <button class="number" onclick="display(1)">1</button>
+        <button class="number" onclick="display(3)">3</button>
+        <button onclick="operators('+')">+</button>
+      </div>
+      <div>
+        <button onclick="operators('1/x')">1/x</button>
+        <button
+          onclick="displayResult.innerHTML = -1 * Number(p1.innerHTML);"
+          >±</button
+        >
+        <button class="number" onclick="display(0)">0</button>
+        <button onclick="display('.')">.</button>
+        <button onclick="calculate()">=</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
